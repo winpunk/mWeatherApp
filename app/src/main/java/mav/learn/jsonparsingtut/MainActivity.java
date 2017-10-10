@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     windsDir = wind1.getInt("deg");
 
 
-//all
+
 
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
