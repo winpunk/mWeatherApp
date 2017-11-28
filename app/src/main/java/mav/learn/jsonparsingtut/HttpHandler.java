@@ -1,5 +1,6 @@
 package mav.learn.jsonparsingtut;
 
+import android.net.Uri;
 import android.util.Log;
 import java.io.BufferedInputStream;
         import java.io.BufferedReader;
@@ -15,8 +16,30 @@ import java.io.BufferedInputStream;
 public class HttpHandler {
 
     private static final String TAG = HttpHandler.class.getSimpleName();
-
+    //private static String url = "http://api.openweathermap.org/data/2.5/weather?q=Vilnius&units=metric&appid=b836a69f365e3090e0f4b365736c2259";
+    private static String url = "http://api.openweathermap.org/data/2.5/weather";
+    private static String PARAM_QUERY = "q";
+    private static String UNITS = "units";
+    private static String APPID = "appid";
+    private static String apiKey = "b836a69f365e3090e0f4b365736c2259";
     public HttpHandler() {
+    }
+
+    public static URL makeUrl(String city) {
+        Uri builtUri = Uri.parse(url).buildUpon()
+                .appendQueryParameter(PARAM_QUERY, city)
+                .appendQueryParameter(UNITS, "metric").appendQueryParameter(APPID, apiKey)
+                .build();
+
+        URL url = null;
+        try {
+            url = new URL(builtUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+
+        return url;
     }
 
     public String makeServiceCall(String reqUrl) {

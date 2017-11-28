@@ -5,9 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,10 +14,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    public String city = "vilnius";
     private int temp;
     private int humidity;
     private int clouds;
@@ -27,11 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private String weather;
     private String TAG = MainActivity.class.getSimpleName();
 
-    private ProgressDialog pDialog;
-
     // URL to get JSON
-    private static String url = "http://api.openweathermap.org/data/2.5/weather?q=Vilnius&units=metric&appid=b836a69f365e3090e0f4b365736c2259";
-
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         new GetData().execute();
 
     }
+
+    public void chan_city(View view) {
+        Button change_city = (Button) findViewById(R.id.ch_city);
+        city = "Kaunas";
+        change_city.setText(city);
+        new GetData().execute();
+    }
+
 
     /**
      * Async task class to get json by making HTTP call
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(MainActivity.this);
-            pDialog.setMessage("Please wait...");
+            pDialog.setMessage("Updating weather info...");
             pDialog.setCancelable(false);
             pDialog.show();
 
@@ -63,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url);
+
+            String jsonStr = sh.makeServiceCall(HttpHandler.makeUrl(city).toString());
 
             Log.e(TAG, "Response from url: " + jsonStr);
 
@@ -128,17 +132,20 @@ public class MainActivity extends AppCompatActivity {
              * Updating parsed JSON data
              * */
 
+
             TextView temperature = (TextView) findViewById(R.id.temp);
             temperature.setText(temp + " ℃");
             TextView humid = (TextView) findViewById(R.id.humidity);
-            humid.setText(humidity + " %");
+            humid.setText("Humid: " + humidity + " %");
             TextView cloud = (TextView) findViewById(R.id.clouds);
-            cloud.setText(clouds + " %");
+            cloud.setText("Cloud cov.: " + clouds + " %");
             TextView wind = (TextView) findViewById(R.id.wind);
             wind.setText(windsSpeed + " m/s; " + windsDir + " deg");
             TextView weathe = (TextView) findViewById(R.id.weather);
-            weathe.setText(weather +"!");
+            weathe.setText("Cond.: " + weather + "!");
+
         }
 
     }
+
 }

@@ -1,106 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="mav.learn.jsonparsingtut.MainActivity"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:orientation="vertical"
-        android:background="#FF0099CC">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3D314A"
+    android:orientation="vertical"
+    tools:context="mav.learn.jsonparsingtut.MainActivity"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp">
 
-    <!-- <TextView
-        android:id="@+id/city"
-        android:text="Vilnius"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:paddingBottom="2dip"
-        android:paddingTop="6dip"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="50sp"
-        android:textStyle="bold" /> -->
+
     <Button
-        android:id="@+id/city"
+        android:id="@+id/ch_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:background="#3D314A"
         android:gravity="center"
+        android:onClick="chan_city"
         android:text="Vilnius"
-        android:textSize="50sp"
-        android:background="#FF0099CC"
-        android:textColor="@color/colorPrimaryDark"
-        />
-        <TextView
-            android:id="@+id/temp"
-            android:text="Temp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingBottom="2dip"
-            android:paddingTop="6dip"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/weather"
-            android:text="weather"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingBottom="2dip"
-            android:paddingTop="6dip"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/humidity"
-            android:text="humidity"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingBottom="2dip"
-            android:paddingTop="6dip"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/wind"
-            android:text="wind"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingBottom="2dip"
-            android:paddingTop="6dip"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/clouds"
-            android:text="clouds"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="2dip"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:paddingTop="6dip"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="45sp"
-            android:textStyle="bold" />
+        android:textAlignment="center"
+        android:textColor="#BBBB"
+        android:textSize="50sp" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="Temp"
+        android:textAlignment="center"
+        android:textColor="#BBD111"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="weather"
+        android:textAlignment="center"
+        android:textColor="#EEEEEE"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="humidity"
+        android:textAlignment="center"
+        android:textColor="#BBBB"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/wind"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="wind"
+        android:textAlignment="center"
+        android:textColor="#EEEEEE"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/clouds"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="clouds"
+        android:textAlignment="center"
+        android:textColor="#BBD111"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
 
