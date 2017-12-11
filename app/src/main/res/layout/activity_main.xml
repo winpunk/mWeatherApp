@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3D314A"
     android:orientation="vertical"
-    tools:context="mav.learn.jsonparsingtut.MainActivity"
+    tools:context="mav.learn.mWeatherApp.MainActivity"
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="8dp">
 
@@ -24,6 +23,30 @@
         android:textColor="#BBBB"
         android:textSize="50sp" />
 
+    <!-- <TextView
+        android:id="@+id/weather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="2dip"
+        android:paddingTop="6dip"
+        android:text="weather"
+        android:textAlignment="center"
+        android:textColor="#EEEEEE"
+        android:textSize="45sp"
+        android:textStyle="bold" /> -->
+
+    <ImageView
+        android:id="@+id/condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="20dp"
+        android:textAlignment="center"
+
+
+        />
+
     <TextView
         android:id="@+id/temp"
         android:layout_width="match_parent"
@@ -38,19 +61,6 @@
         android:textSize="45sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/weather"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:paddingBottom="2dip"
-        android:paddingTop="6dip"
-        android:text="weather"
-        android:textAlignment="center"
-        android:textColor="#EEEEEE"
-        android:textSize="45sp"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/humidity"

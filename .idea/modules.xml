@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JsonParsingtut.iml" filepath="$PROJECT_DIR$/JsonParsingtut.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mWeather App.iml" filepath="$PROJECT_DIR$/mWeather App.iml" />
+      <module fileurl="file://C:\Users\MaV\AndroidStudioProjects\mWeather App\mWeather App.iml" filepath="C:\Users\MaV\AndroidStudioProjects\mWeather App\mWeather App.iml" />
     </modules>
   </component>
 </project>
